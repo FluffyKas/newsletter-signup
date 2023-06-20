@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --color-pale-navy: hsl(235, 18%, 26%);
+  --color-navy: hsla(234, 29%, 20%, 1);
+  --color-grey: hsla(243, 28%, 13%, 0.25);
+  --color-red: hsla(4, 100%, 67%, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  background: var(--color-pale-navy);
+}
+
+@media screen and (min-width: 375px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+fieldset {
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.subscription-page {
+  background: white;
+  max-width: 375px;
+}
+
+@media screen and (min-width: 375px) {
+  .subscription-page {
+    border-radius: 36px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .subscription-page {
+    max-width: 928px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+  }
+}
+
+.subscription-page__content {
+  margin: 2.5rem 1.5rem;
+  order: 1;
+  max-width: 375px;
+}
+
+@media screen and (min-width: 500px) {
+  .subscription-page__content {
+    margin: 4.5rem 2.5rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .subscription-page__image {
+    order: 2;
+    max-width: 400px;
+  }
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.description {
+  margin-block: 1.5rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+form {
+  margin-top: 2.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group__title-bar {
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-msg {
+  color: var(--color-red);
+}
+
+.form-group input {
+  background: white;
+  border: 1px solid var(--color-grey);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  background: var(--color-navy);
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  padding: 1.125rem 2.875rem;
+  text-align: center;
+  width: 100%;
+}
