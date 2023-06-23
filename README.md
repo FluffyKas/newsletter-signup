@@ -28,10 +28,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/subscription-page-desktop.png)
-![](./screenshots/subscription-page-mobile.png)
-![](./screenshots/success-page-desktop.png)
-![](./screenshots/success-page-mobile.png)
+![](/src/screenshots/subscription-page-desktop.png)
+![](/src/screenshots/subscription-page-mobile.png)
+![](/src/screenshots/success-page-desktop.png)
+![](/src/screenshots/success-page-mobile.png)
 
 ### Links
 
