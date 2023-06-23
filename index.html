@@ -8,7 +8,7 @@
     <title>Frontend Mentor | Newsletter sign-up form with success message</title>
   </head>
   <body>
-    <div class="subscription-page">
+    <div class="subscription-page" id="subscription-page">
       <picture class="subscription-page__image">
         <source srcset="./src/assets/images/illustration-sign-up-mobile.svg" type="image/svg+xml" media="(max-width: 500px)" />
         <img src="./src/assets/images/illustration-sign-up-desktop.svg" alt="" />
@@ -46,12 +46,16 @@
       </div>
     </div>
 
-    <div class="success hidden">
-      <img src="" alt="" />
-      <h2>Thanks for subscribing!</h2>
-      <p>A confirmation email has been sent to ash@loremcompany.com. Please open it and click the button inside to confirm your subscription.</p>
-      <button>Dismiss message</button>
+    <div class="success-page hidden" id="success-page">
+      <div class="success-page__inner-container">
+        <img class="success-page__checkmark" src="./src/assets/images/icon-success.svg" alt="" />
+        <h2 class="success-page__title">Thanks for subscribing!</h2>
+        <p class="success-page__description">
+          A confirmation email has been sent to <span class="success-email" id="success-email"></span>. Please open it and click the button inside to confirm your subscription.
+        </p>
+        <button id="dismiss-btn">Dismiss message</button>
+      </div>
     </div>
-    <script src="./"></script>
+    <script src="./src/main.ts"></script>
   </body>
 </html>

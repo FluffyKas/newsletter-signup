@@ -102,27 +102,33 @@ fieldset {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .subscription-page {
   background: white;
   max-width: 375px;
+  min-height: 100vh;
+  animation-duration: 1s;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 380px) {
   .subscription-page {
     border-radius: 36px;
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 700px) {
   .subscription-page {
     max-width: 928px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem;
+    min-height: auto;
+    margin-inline: 1.5rem;
   }
 }
 
@@ -187,6 +193,8 @@ form {
 }
 
 .form-group input {
+  color: var(--dark-navy, #242742);
+  opacity: 0.5;
   background: white;
   border: 1px solid var(--color-grey);
   border-radius: 8px;
@@ -194,12 +202,126 @@ form {
   margin-bottom: 1.5rem;
 }
 
+.form-group input:focus,
+button:focus {
+  outline: 1px dashed var(--color-navy);
+}
+
+.form-group input:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.form-group input:focus-visible,
+button:focus-visible {
+  outline: 1px dashed var(--color-navy);
+}
+
 button {
   background: var(--color-navy);
+  border: none;
   border-radius: 8px;
   color: white;
+  cursor: pointer;
   font-weight: 700;
   padding: 1.125rem 2.875rem;
   text-align: center;
   width: 100%;
+  transform: scale(1);
+  transition: all 0.25s ease-in-out;
+}
+
+button:hover {
+  background: var(--gradient-1, linear-gradient(225deg, #ff6a3a 0%, #ff527b 100%));
+  box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.5);
+  transform: scale(1.025);
+}
+
+.success-page {
+  max-width: 500px;
+  background: white;
+  min-height: 100vh;
+  padding: 1.5rem;
+  padding-top: 9.375rem;
+  position: relative;
+  animation-duration: 0.75s;
+  animation-name: SlideIn;
+  animation-iteration-count: 1;
+}
+
+@media screen and (min-width: 500px) {
+  .success-page {
+    border-radius: 36px;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    padding: 4rem;
+    margin-inline: 1.5rem;
+  }
+}
+
+.success-page__checkmark {
+  margin-bottom: 2.5rem;
+}
+
+.success-page__title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 100%;
+}
+
+.success-page__description {
+  font-size: 16px;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  line-height: 24px;
+}
+
+@media screen and (min-width: 500px) {
+  .success-page__description {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.success-page button {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  width: calc(100% - 64px);
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 500px) {
+  .success-page button {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+}
+
+.success-email {
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: opacity(0%);
+    transform: scale(0.6);
+  }
+
+  to {
+    transform: opacity(100%);
+    transform: scale(1);
+  }
+}
+
+@keyframes SlideIn {
+  from {
+    transform: opacity(0%);
+    transform: translateY(-30%);
+  }
+
+  to {
+    transform: opacity(100%);
+    transform: translateY(0%);
+  }
 }
