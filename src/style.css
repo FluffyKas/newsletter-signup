@@ -204,6 +204,7 @@ form {
 
 .form-group input:focus,
 button:focus {
+  opacity: 1;
   outline: 1px dashed var(--color-navy);
 }
 
@@ -214,7 +215,7 @@ button:focus:not(:focus-visible) {
 
 .form-group input:focus-visible,
 button:focus-visible {
-  outline: 1px dashed var(--color-navy);
+  outline: 3px dashed var(--color-red);
 }
 
 button {
